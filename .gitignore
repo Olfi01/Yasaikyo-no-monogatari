@@ -2,4 +2,6 @@
 /eclipse/
 /.gradle/
 /build/
+/.settings/
+/testEnv/
 start_cmd_here.bat

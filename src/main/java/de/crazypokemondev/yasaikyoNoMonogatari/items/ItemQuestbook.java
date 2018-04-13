@@ -3,6 +3,7 @@ package de.crazypokemondev.yasaikyoNoMonogatari.items;
 import java.util.List;
 import java.util.UUID;
 
+import de.crazypokemondev.yasaikyoNoMonogatari.YasaikyoNoMonogatari;
 import de.crazypokemondev.yasaikyoNoMonogatari.lang.Strings;
 import de.crazypokemondev.yasaikyoNoMonogatari.master.ModItem;
 import net.minecraft.client.resources.I18n;
@@ -31,10 +32,10 @@ public class ItemQuestbook extends ModItem{
 		}
 		UUID playerId = player.getUniqueID();
 		if (nbt.hasKey("boundUUID")){
-			if (playerId.toString() != nbt.getString("boundUUID")){
+			if (!playerId.toString().equals(nbt.getString("boundUUID"))){
 				//Quest book is bound to another player than the one who used it
 				world.playSound(player.posX, player.posY, player.posZ, 
-						"yasaikyonomonogatari:random.poof", 1, 0, false);
+						"yasaikyonomonogatari:random.poof", 0.5f, 0, false);
 				return stack;
 			}
 		}
@@ -44,6 +45,7 @@ public class ItemQuestbook extends ModItem{
 		}
 		nbt.setString("boundPlayerName", player.getDisplayName());
 		//open book here
+		YasaikyoNoMonogatari.proxy.openQuestbookGui();
 		stack.setTagCompound(nbt);
 		return stack;
 	}
