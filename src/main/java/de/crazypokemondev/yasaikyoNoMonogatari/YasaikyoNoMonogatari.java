@@ -9,8 +9,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import de.crazypokemondev.yasaikyoNoMonogatari.items.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import proxy.CommonProxy;
 
@@ -28,7 +28,7 @@ public class YasaikyoNoMonogatari {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
-			return Items.book;
+			return ModItems.QuestBook;
 		}
 		
 		@Override
