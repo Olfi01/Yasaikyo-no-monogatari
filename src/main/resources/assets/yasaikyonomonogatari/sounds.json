@@ -1,0 +1,10 @@
+{
+	"random.poof":
+	{
+		"category": "player",
+		"sounds":
+		[
+			"random/poof"
+		]
+	}
+}

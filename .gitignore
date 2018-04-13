@@ -1,4 +1,5 @@
 /bin/
 /eclipse/
 /.gradle/
+/build/
 start_cmd_here.bat

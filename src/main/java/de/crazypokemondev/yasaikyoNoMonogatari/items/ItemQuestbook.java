@@ -33,6 +33,8 @@ public class ItemQuestbook extends ModItem{
 		if (nbt.hasKey("boundUUID")){
 			if (playerId.toString() != nbt.getString("boundUUID")){
 				//Quest book is bound to another player than the one who used it
+				world.playSound(player.posX, player.posY, player.posZ, 
+						"yasaikyonomonogatari:random.poof", 1, 0, false);
 				return stack;
 			}
 		}
