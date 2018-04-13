@@ -1,1 +1,4 @@
-lore.boundplayer=Bound to: {0}
+lore.boundplayer=Bound to: %s
+lore.unbound=Not bound
+itemGroup.yasaikyo=Yasaikyo no Monogatari
+item.questbook.name=Quest Book

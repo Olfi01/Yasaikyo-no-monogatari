@@ -10,6 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
 public class ItemQuestbook extends ModItem{
@@ -38,7 +39,6 @@ public class ItemQuestbook extends ModItem{
 		else{
 			//bind questbook to the player who used it
 			nbt.setString("boundUUID", playerId.toString());
-			nbt.setString("boundPlayerName", player.getDisplayName());
 		}
 		nbt.setString("boundPlayerName", player.getDisplayName());
 		//open book here
@@ -51,7 +51,9 @@ public class ItemQuestbook extends ModItem{
 	public void addInformation(ItemStack stack, EntityPlayer player, List lores, boolean b) {
 		if (stack.hasTagCompound() && stack.getTagCompound().hasKey("boundPlayerName")){
 			lores.add(I18n.format(Strings.BOUND_LORE, 
+					EnumChatFormatting.GRAY + 
 					stack.getTagCompound().getString("boundPlayerName")));
 		}
+		else lores.add(I18n.format(Strings.UNBOUND_LORE));
 	}
 }
